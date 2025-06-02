@@ -48,7 +48,7 @@ const EducationUnitEdit = () => {
     const fetchData = async () => {
       try {
         const res = await axios.get(
-          `http://localhost:5000/education_units/${id}`
+          `https://api.satudatabidangpk.com/education_units/${id}`
         );
         const data = res.data;
 
@@ -74,7 +74,7 @@ const EducationUnitEdit = () => {
   useEffect(() => {
     // Ambil list wilayah
     const fetchRegions = async () => {
-      const res = await axios.get("http://localhost:5000/region");
+      const res = await axios.get("https://api.satudatabidangpk.com/region");
       setRegions(res.data);
     };
     fetchRegions();
@@ -85,7 +85,7 @@ const EducationUnitEdit = () => {
       setIsSubdistrictDisabled(false);
       const fetchSubdistricts = async () => {
         const res = await axios.get(
-          `http://localhost:5000/region/subdistricts/${form.region_id}`
+          `https://api.satudatabidangpk.com/region/subdistricts/${form.region_id}`
         );
         setSubdistricts(res.data);
       };
@@ -191,7 +191,7 @@ const EducationUnitEdit = () => {
 
       if (id) {
         await axios.put(
-          `http://localhost:5000/education_units/${id}`,
+          `https://api.satudatabidangpk.com/education_units/${id}`,
           formData,
           {
             headers: {
@@ -202,7 +202,7 @@ const EducationUnitEdit = () => {
         );
       } else {
         const res = await axios.post(
-          "http://localhost:5000/education_units",
+          "https://api.satudatabidangpk.com/education_units",
           formData,
           {
             headers: {

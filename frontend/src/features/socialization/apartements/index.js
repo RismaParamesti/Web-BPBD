@@ -59,7 +59,7 @@ const Apartement = () => {
   }, []);
   const fetchApartments = async () => {
     try {
-      const response = await axios.get("http://localhost:5000/apartments");
+      const response = await axios.get("https://api.satudatabidangpk.com/apartments");
       console.log("Fetched Data:", response.data); // Log the data
       setData(response.data);
       setFilteredData(response.data); // ← ini penting
@@ -116,7 +116,7 @@ const Apartement = () => {
         try {
           const token = localStorage.getItem("token");
 
-          await axios.delete(`http://localhost:5000/apartments/${id}`, {
+          await axios.delete(`https://api.satudatabidangpk.com/apartments/${id}`, {
             headers: {
               Authorization: `Bearer ${token}`,
             },

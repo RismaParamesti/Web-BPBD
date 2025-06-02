@@ -60,7 +60,7 @@ const PublicHousing = () => {
   }, []);
   const fetchApartments = async () => {
     try {
-      const response = await axios.get("http://localhost:5000/public_housings");
+      const response = await axios.get("https://api.satudatabidangpk.com/public_housings");
       console.log("Fetched Data:", response.data); // Log the data
       setData(response.data);
     } catch (error) {
@@ -110,7 +110,7 @@ const PublicHousing = () => {
         try {
           const token = localStorage.getItem("token");
 
-          await axios.delete(`http://localhost:5000/public_housings/${id}`, {
+          await axios.delete(`https://api.satudatabidangpk.com/public_housings/${id}`, {
             headers: {
               Authorization: `Bearer ${token}`,
             },

@@ -7,7 +7,7 @@ const OfficesChart = () => {
   const [chartOptions, setChartOptions] = useState({});
 
   useEffect(() => {
-    axios.get('http://localhost:5000/chart/offices')
+    axios.get('https://api.satudatabidangpk.com/chart/offices')
       .then(res => {
         const { series, drilldownSeries } = res.data;
 

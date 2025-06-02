@@ -7,7 +7,7 @@ const ApartementsChart = () => {
   const [chartOptions, setChartOptions] = useState({});
 
   useEffect(() => {
-    axios.get('http://localhost:5000/chart/apartments')
+    axios.get('https://api.satudatabidangpk.com/chart/apartments')
       .then(res => {
         const { series, drilldownSeries } = res.data;
 

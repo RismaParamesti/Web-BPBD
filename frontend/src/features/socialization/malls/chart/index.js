@@ -7,7 +7,7 @@ const MallsChart = () => {
   const [chartOptions, setChartOptions] = useState({});
 
   useEffect(() => {
-    axios.get('http://localhost:5000/chart/malls')
+    axios.get('https://api.satudatabidangpk.com/chart/malls')
       .then(res => {
         const { series, drilldownSeries } = res.data;
 

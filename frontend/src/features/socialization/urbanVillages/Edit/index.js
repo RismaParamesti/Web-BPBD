@@ -44,7 +44,7 @@ const UrbanVillageEdit = () => {
     const fetchData = async () => {
       try {
         const res = await axios.get(
-          `http://localhost:5000/urban_village/${id}`
+          `https://api.satudatabidangpk.com/urban_village/${id}`
         );
         const data = res.data;
 
@@ -70,7 +70,7 @@ const UrbanVillageEdit = () => {
   useEffect(() => {
     // Ambil list wilayah
     const fetchRegions = async () => {
-      const res = await axios.get("http://localhost:5000/region");
+      const res = await axios.get("https://api.satudatabidangpk.com/region");
       setRegions(res.data);
     };
     fetchRegions();
@@ -81,7 +81,7 @@ const UrbanVillageEdit = () => {
       setIsSubdistrictDisabled(false);
       const fetchSubdistricts = async () => {
         const res = await axios.get(
-          `http://localhost:5000/region/subdistricts/${form.region_id}`
+          `https://api.satudatabidangpk.com/region/subdistricts/${form.region_id}`
         );
         setSubdistricts(res.data);
       };
@@ -186,7 +186,7 @@ const UrbanVillageEdit = () => {
       const token = localStorage.getItem("token"); // ← letakkan di sini
 
       if (id) {
-        await axios.put(`http://localhost:5000/urban_village/${id}`, formData, {
+        await axios.put(`https://api.satudatabidangpk.com/urban_village/${id}`, formData, {
           headers: {
             "Content-Type": "multipart/form-data",
             Authorization: `Bearer ${token}`,
@@ -194,7 +194,7 @@ const UrbanVillageEdit = () => {
         });
       } else {
         const res = await axios.post(
-          "http://localhost:5000/urban_village",
+          "https://api.satudatabidangpk.com/urban_village",
           formData,
           {
             headers: {

@@ -17,7 +17,7 @@ const GameEdit = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const res = await axios.get(`http://localhost:5000/games/${id}`);
+        const res = await axios.get(`https://api.satudatabidangpk.com/games/${id}`);
         setForm({ quizizz_url: res.data.quizizz_url || "" });
         setGame({ name: res.data.name || "" }); // 👈 tambahkan ini
       } catch (error) {
@@ -48,7 +48,7 @@ const GameEdit = () => {
     try {
       const token = localStorage.getItem("token");
 
-      await axios.put(`http://localhost:5000/games/${id}`, form, {
+      await axios.put(`https://api.satudatabidangpk.com/games/${id}`, form, {
         headers: {
           "Content-Type": "application/json",
           Authorization: `Bearer ${token}`,

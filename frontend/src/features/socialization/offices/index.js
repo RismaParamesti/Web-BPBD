@@ -61,7 +61,7 @@ const Office = () => {
   }, []);
   const fetchoffices = async () => {
     try {
-      const response = await axios.get("http://localhost:5000/offices");
+      const response = await axios.get("https://api.satudatabidangpk.com/offices");
       console.log("Fetched Data:", response.data); // Log the data
       setData(response.data);
     } catch (error) {
@@ -118,7 +118,7 @@ const Office = () => {
         try {
           const token = localStorage.getItem("token");
 
-          await axios.delete(`http://localhost:5000/offices/${id}`, {
+          await axios.delete(`https://api.satudatabidangpk.com/offices/${id}`, {
             headers: {
               Authorization: `Bearer ${token}`,
             },

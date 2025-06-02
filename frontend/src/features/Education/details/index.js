@@ -50,7 +50,7 @@ const EducationDetail = () => {
     const fetchEducations = async () => {
       try {
         const response = await axios.get(
-          `http://localhost:5000/educations/${id}`
+          `https://api.satudatabidangpk.com/educations/${id}`
         );
         const { materi } = response.data.data;
 

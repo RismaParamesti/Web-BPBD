@@ -19,7 +19,7 @@ const RegionTable = () => {
   ];
 
   useEffect(() => {
-    axios.get('http://localhost:5000/dashboard/fasilitas')
+    axios.get('https://api.satudatabidangpk.com/dashboard/fasilitas')
       .then((response) => {
         setData(response.data);
         setLoading(false);

@@ -43,7 +43,7 @@ const OfficeEdit = () => {
     // Ambil data berdasar id
     const fetchData = async () => {
       try {
-        const res = await axios.get(`http://localhost:5000/offices/${id}`);
+        const res = await axios.get(`https://api.satudatabidangpk.com/offices/${id}`);
         const data = res.data;
 
         // data.photo diasumsikan array URL/file lama
@@ -68,7 +68,7 @@ const OfficeEdit = () => {
   useEffect(() => {
     // Ambil list wilayah
     const fetchRegions = async () => {
-      const res = await axios.get("http://localhost:5000/region");
+      const res = await axios.get("https://api.satudatabidangpk.com/region");
       setRegions(res.data);
     };
     fetchRegions();
@@ -79,7 +79,7 @@ const OfficeEdit = () => {
       setIsSubdistrictDisabled(false);
       const fetchSubdistricts = async () => {
         const res = await axios.get(
-          `http://localhost:5000/region/subdistricts/${form.region_id}`
+          `https://api.satudatabidangpk.com/region/subdistricts/${form.region_id}`
         );
         setSubdistricts(res.data);
       };
@@ -184,7 +184,7 @@ const OfficeEdit = () => {
       const token = localStorage.getItem("token"); // ← letakkan di sini
 
       if (id) {
-        await axios.put(`http://localhost:5000/offices/${id}`, formData, {
+        await axios.put(`https://api.satudatabidangpk.com/offices/${id}`, formData, {
           headers: {
             "Content-Type": "multipart/form-data",
             Authorization: `Bearer ${token}`,
@@ -192,7 +192,7 @@ const OfficeEdit = () => {
         });
       } else {
         const res = await axios.post(
-          "http://localhost:5000/offices",
+          "https://api.satudatabidangpk.com/offices",
           formData,
           {
             headers: {

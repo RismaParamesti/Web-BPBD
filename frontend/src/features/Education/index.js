@@ -38,7 +38,7 @@ const Education = () => {
   }
   const fetchEducations = async () => {
     try {
-      const response = await axios.get("http://localhost:5000/educations");
+      const response = await axios.get("https://api.satudatabidangpk.com/educations");
       setEducations(response.data);
     } catch (error) {
       console.error("Gagal mengambil data materi:", error);
@@ -94,7 +94,7 @@ const Education = () => {
         try {
           const token = localStorage.getItem("token");
 
-          await axios.delete(`http://localhost:5000/educations/${id}`, {
+          await axios.delete(`https://api.satudatabidangpk.com/educations/${id}`, {
             headers: {
               Authorization: `Bearer ${token}`,
             },
@@ -216,7 +216,7 @@ const Education = () => {
                 File:{" "}
                 {item.materi ? (
                   <a
-                    href={`http://localhost:5000/uploads/materi/${item.materi}`}
+                    href={`https://api.satudatabidangpk.com/uploads/materi/${item.materi}`}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-blue-500 underline"

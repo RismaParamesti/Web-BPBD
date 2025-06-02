@@ -73,7 +73,7 @@ const HealthFacility = () => {
   const fetchHealthFacilities = async () => {
     try {
       const response = await axios.get(
-        "http://localhost:5000/health_facilities"
+        "https://api.satudatabidangpk.com/health_facilities"
       );
       console.log("Fetched Data:", response.data); // Log the data
       setData(response.data);
@@ -180,7 +180,7 @@ const HealthFacility = () => {
         try {
           const token = localStorage.getItem("token");
 
-          await axios.delete(`http://localhost:5000/health_facilities/${id}`, {
+          await axios.delete(`https://api.satudatabidangpk.com/health_facilities/${id}`, {
             headers: {
               Authorization: `Bearer ${token}`,
             },

@@ -29,7 +29,7 @@ const Dashboard = () => {
   };
 
   useEffect(() => {
-    fetch(`http://localhost:5000/dashboard/group-by-year/${selectedTable}`)
+    fetch(`https://api.satudatabidangpk.com/dashboard/group-by-year/${selectedTable}`)
       .then((res) => res.json())
       .then((data) => {
         if (data.data) {

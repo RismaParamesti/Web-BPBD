@@ -7,7 +7,7 @@ const HotelsChart = () => {
   const [chartOptions, setChartOptions] = useState({});
 
   useEffect(() => {
-    axios.get('http://localhost:5000/chart/hotels')
+    axios.get('https://api.satudatabidangpk.com/chart/hotels')
       .then(res => {
         const { series, drilldownSeries } = res.data;
 

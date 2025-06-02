@@ -13,7 +13,7 @@ const PublicHousingDetail = () => {
   const basePath = currentPath.startsWith("/spr") ? "/spr" : "/app";
 
   useEffect(() => {
-    fetch(`http://localhost:5000/public_housings/${id}`)
+    fetch(`https://api.satudatabidangpk.com/public_housings/${id}`)
       .then((res) => res.json())
       .then((res) => {
         setData(res); // gunakan langsung data dari backend tanpa manipulasi ulang

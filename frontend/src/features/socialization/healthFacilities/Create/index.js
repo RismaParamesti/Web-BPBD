@@ -32,7 +32,7 @@ const HealthFacilitiesForm = () => {
   useEffect(() => {
     const fetchRegions = async () => {
       try {
-        const res = await axios.get("http://localhost:5000/region");
+        const res = await axios.get("https://api.satudatabidangpk.com/region");
         console.log("Regions:", res.data); // Tambahkan log ini
         setRegions(res.data);
       } catch (error) {
@@ -47,7 +47,7 @@ const HealthFacilitiesForm = () => {
       setIsSubdistrictDisabled(false);
       const fetchSubdistricts = async () => {
         const res = await axios.get(
-          `http://localhost:5000/region/subdistricts/${form.region_id}`
+          `https://api.satudatabidangpk.com/region/subdistricts/${form.region_id}`
         );
         setSubdistricts(res.data);
       };
@@ -110,7 +110,7 @@ const HealthFacilitiesForm = () => {
       const token = localStorage.getItem("token"); // Ambil token dari localStorage
 
       const response = await axios.post(
-        "http://localhost:5000/health_facilities",
+        "https://api.satudatabidangpk.com/health_facilities",
         formData,
         {
           headers: {

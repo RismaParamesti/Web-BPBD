@@ -14,7 +14,7 @@ const EducationUnitDetail = () => {
   const basePath = currentPath.startsWith("/spr") ? "/spr" : "/app";
 
   useEffect(() => {
-    fetch(`http://localhost:5000/education_units/${id}`)
+    fetch(`https://api.satudatabidangpk.com/education_units/${id}`)
       .then((res) => res.json())
       .then((res) => {
         setData(res);

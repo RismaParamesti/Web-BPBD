@@ -7,7 +7,7 @@ const UrbanVillageChart = () => {
   const [chartOptions, setChartOptions] = useState({});
 
   useEffect(() => {
-    axios.get('http://localhost:5000/chart/urban_villages')
+    axios.get('https://api.satudatabidangpk.com/chart/urban_villages')
       .then(res => {
         const { series, drilldownSeries } = res.data;
 

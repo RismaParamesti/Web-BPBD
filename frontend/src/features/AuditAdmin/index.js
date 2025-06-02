@@ -22,7 +22,7 @@ const AuditAdminSuper = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const res = await axios.get(`http://localhost:5000/audit/${table}`);
+        const res = await axios.get(`https://api.satudatabidangpk.com/audit/${table}`);
         setData(res.data);
         setCurrentPage(1);
       } catch (err) {

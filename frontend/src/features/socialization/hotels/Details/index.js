@@ -13,7 +13,7 @@ const HotelDetail = () => {
   const basePath = currentPath.startsWith("/spr") ? "/spr" : "/app";
 
   useEffect(() => {
-    fetch(`http://localhost:5000/hotels/${id}`)
+    fetch(`https://api.satudatabidangpk.com/hotels/${id}`)
       .then((res) => res.json())
       .then((res) => {
         setData(res); // gunakan langsung data dari backend tanpa manipulasi ulang

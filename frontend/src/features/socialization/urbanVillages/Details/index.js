@@ -13,7 +13,7 @@ const UrbanVillageDetail = () => {
   const basePath = currentPath.startsWith("/spr") ? "/spr" : "/app";
 
   useEffect(() => {
-    fetch(`http://localhost:5000/urban_village/${id}`)
+    fetch(`https://api.satudatabidangpk.com/urban_village/${id}`)
       .then((res) => res.json())
       .then((res) => {
         setData(res); // gunakan langsung data dari backend tanpa manipulasi ulang

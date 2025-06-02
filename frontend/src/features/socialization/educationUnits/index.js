@@ -44,7 +44,7 @@ const EducationUnits = () => {
   }, []);
   const fetchEducationUnits = async () => {
     try {
-      const response = await axios.get("http://localhost:5000/education_units");
+      const response = await axios.get("https://api.satudatabidangpk.com/education_units");
       console.log("Fetched Data:", response.data); // Log the data
       setData(response.data);
     } catch (error) {
@@ -86,7 +86,7 @@ const EducationUnits = () => {
         try {
           const token = localStorage.getItem("token");
 
-          await axios.delete(`http://localhost:5000/education_units/${id}`, {
+          await axios.delete(`https://api.satudatabidangpk.com/education_units/${id}`, {
             headers: {
               Authorization: `Bearer ${token}`,
             },

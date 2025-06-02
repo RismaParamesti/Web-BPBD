@@ -44,7 +44,7 @@ const PublicHousingEdit = () => {
     const fetchData = async () => {
       try {
         const res = await axios.get(
-          `http://localhost:5000/public_housings/${id}`
+          `https://api.satudatabidangpk.com/public_housings/${id}`
         );
         const data = res.data;
 
@@ -70,7 +70,7 @@ const PublicHousingEdit = () => {
   useEffect(() => {
     // Ambil list wilayah
     const fetchRegions = async () => {
-      const res = await axios.get("http://localhost:5000/region");
+      const res = await axios.get("https://api.satudatabidangpk.com/region");
       setRegions(res.data);
     };
     fetchRegions();
@@ -81,7 +81,7 @@ const PublicHousingEdit = () => {
       setIsSubdistrictDisabled(false);
       const fetchSubdistricts = async () => {
         const res = await axios.get(
-          `http://localhost:5000/region/subdistricts/${form.region_id}`
+          `https://api.satudatabidangpk.com/region/subdistricts/${form.region_id}`
         );
         setSubdistricts(res.data);
       };
@@ -187,7 +187,7 @@ const PublicHousingEdit = () => {
 
       if (id) {
         await axios.put(
-          `http://localhost:5000/public_housings/${id}`,
+          `https://api.satudatabidangpk.com/public_housings/${id}`,
           formData,
           {
             headers: {
@@ -198,7 +198,7 @@ const PublicHousingEdit = () => {
         );
       } else {
         const res = await axios.post(
-          "http://localhost:5000/public_housings",
+          "https://api.satudatabidangpk.com/public_housings",
           formData,
           {
             headers: {

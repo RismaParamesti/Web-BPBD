@@ -66,6 +66,9 @@ app.use("/urban_village", urbanVillageRoute); //kelurahan tangguh
 app.use("/region", regionRoute); //panggil dropdown wilayah
 app.use("/chart", chartRoute); //chart drilldown
 
+app.get("/", (req, res) => {
+  res.send("API is running...");
+});
 
 
 // Menentukan port server: ambil dari environment variable atau default ke 5000

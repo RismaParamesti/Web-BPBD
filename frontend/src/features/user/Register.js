@@ -26,7 +26,7 @@ const Register = () => {
       role: form.role, // "admin" atau "superadmin", tergantung nilai default/frontend
     };
 
-    const response = await fetch("http://localhost:5000/auth/register", {
+    const response = await fetch("https://api.satudatabidangpk.com/auth/register", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(payload),

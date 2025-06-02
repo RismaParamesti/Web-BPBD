@@ -46,7 +46,7 @@ const HealthFacilitiesEdit = () => {
     const fetchData = async () => {
       try {
         const res = await axios.get(
-          `http://localhost:5000/health_facilities/${id}`
+          `https://api.satudatabidangpk.com/health_facilities/${id}`
         );
         const data = res.data;
 
@@ -72,7 +72,7 @@ const HealthFacilitiesEdit = () => {
   useEffect(() => {
     // Ambil list wilayah
     const fetchRegions = async () => {
-      const res = await axios.get("http://localhost:5000/region");
+      const res = await axios.get("https://api.satudatabidangpk.com/region");
       setRegions(res.data);
     };
     fetchRegions();
@@ -83,7 +83,7 @@ const HealthFacilitiesEdit = () => {
       setIsSubdistrictDisabled(false);
       const fetchSubdistricts = async () => {
         const res = await axios.get(
-          `http://localhost:5000/region/subdistricts/${form.region_id}`
+          `https://api.satudatabidangpk.com/region/subdistricts/${form.region_id}`
         );
         setSubdistricts(res.data);
       };
@@ -189,7 +189,7 @@ const HealthFacilitiesEdit = () => {
 
       if (id) {
         await axios.put(
-          `http://localhost:5000/health_facilities/${id}`,
+          `https://api.satudatabidangpk.com/health_facilities/${id}`,
           formData,
           {
             headers: {
@@ -200,7 +200,7 @@ const HealthFacilitiesEdit = () => {
         );
       } else {
         const res = await axios.post(
-          "http://localhost:5000/health_facilities",
+          "https://api.satudatabidangpk.com/health_facilities",
           formData,
           {
             headers: {

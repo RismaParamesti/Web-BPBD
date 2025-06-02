@@ -21,7 +21,7 @@ function Profile() {
     const token = localStorage.getItem("token");
 
     axios
-      .get("http://localhost:5000/users", {
+      .get("https://api.satudatabidangpk.com/users", {
         headers: { Authorization: `Bearer ${token}` },
       })
       .then((res) => {
@@ -81,14 +81,14 @@ function Profile() {
     const updateData = { name, email, contact };
 
     axios
-      .put("http://localhost:5000/users", updateData, {
+      .put("https://api.satudatabidangpk.com/users", updateData, {
         headers: { Authorization: `Bearer ${token}` },
       })
       .then(() => {
         if (passwordChanged && role === "superadmin") {
           // Kirim password lama dan baru untuk validasi
           return axios.put(
-            "http://localhost:5000/users/password",
+            "https://api.satudatabidangpk.com/users/password",
             { oldPassword, newPassword },
             { headers: { Authorization: `Bearer ${token}` } }
           );
@@ -101,7 +101,7 @@ function Profile() {
         setOldPassword("");
         setNewPassword("");
         // reload user data
-        return axios.get("http://localhost:5000/users", {
+        return axios.get("https://api.satudatabidangpk.com/users", {
           headers: { Authorization: `Bearer ${token}` },
         });
       })

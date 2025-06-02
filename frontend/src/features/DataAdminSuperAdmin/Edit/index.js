@@ -19,7 +19,7 @@ const AdminEdit = () => {
   useEffect(() => {
     const fetchUserById = async () => {
       try {
-        const response = await fetch(`http://localhost:5000/admin/${id}`);
+        const response = await fetch(`https://api.satudatabidangpk.com/admin/${id}`);
         const data = await response.json();
 
         if (response.ok) {
@@ -63,7 +63,7 @@ const AdminEdit = () => {
     e.preventDefault();
 
     try {
-      const response = await fetch(`http://localhost:5000/admin/${id}`, {
+      const response = await fetch(`https://api.satudatabidangpk.com/admin/${id}`, {
         method: "PUT",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(form),

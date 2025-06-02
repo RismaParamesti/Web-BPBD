@@ -43,7 +43,7 @@ const MallsEdit = () => {
     // Ambil data berdasar id
     const fetchData = async () => {
       try {
-        const res = await axios.get(`http://localhost:5000/malls/${id}`);
+        const res = await axios.get(`https://api.satudatabidangpk.com/malls/${id}`);
         const data = res.data;
 
         // data.photo diasumsikan array URL/file lama
@@ -68,7 +68,7 @@ const MallsEdit = () => {
   useEffect(() => {
     // Ambil list wilayah
     const fetchRegions = async () => {
-      const res = await axios.get("http://localhost:5000/region");
+      const res = await axios.get("https://api.satudatabidangpk.com/region");
       setRegions(res.data);
     };
     fetchRegions();
@@ -79,7 +79,7 @@ const MallsEdit = () => {
       setIsSubdistrictDisabled(false);
       const fetchSubdistricts = async () => {
         const res = await axios.get(
-          `http://localhost:5000/region/subdistricts/${form.region_id}`
+          `https://api.satudatabidangpk.com/region/subdistricts/${form.region_id}`
         );
         setSubdistricts(res.data);
       };
@@ -184,14 +184,14 @@ const MallsEdit = () => {
       const token = localStorage.getItem("token"); // ← letakkan di sini
 
       if (id) {
-        await axios.put(`http://localhost:5000/malls/${id}`, formData, {
+        await axios.put(`https://api.satudatabidangpk.com/malls/${id}`, formData, {
           headers: {
             "Content-Type": "multipart/form-data",
             Authorization: `Bearer ${token}`,
           },
         });
       } else {
-        const res = await axios.post("http://localhost:5000/malls", formData, {
+        const res = await axios.post("https://api.satudatabidangpk.com/malls", formData, {
           headers: {
             "Content-Type": "multipart/form-data",
             Authorization: `Bearer ${token}`,

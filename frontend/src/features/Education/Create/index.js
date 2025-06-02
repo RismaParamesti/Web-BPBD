@@ -22,7 +22,7 @@ const EducationCreate = () => {
     e.preventDefault();
     try {
       const response = await axios.post(
-        "http://localhost:5000/educations",
+        "https://api.satudatabidangpk.com/educations",
         form,
         {
           headers: {

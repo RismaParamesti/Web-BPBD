@@ -21,14 +21,14 @@ const DashboardStats = () => {
     const fetchStats = async () => {
       try {
         const responses = await Promise.all([
-          fetch("http://localhost:5000/dashboard/health-facilities"),
-          fetch("http://localhost:5000/dashboard/education-units"),
-          fetch("http://localhost:5000/dashboard/apartments"),
-          fetch("http://localhost:5000/dashboard/malls"),
-          fetch("http://localhost:5000/dashboard/hotels"),
-          fetch("http://localhost:5000/dashboard/offices"),
-          fetch("http://localhost:5000/dashboard/public-housings"),
-          fetch("http://localhost:5000/dashboard/urban-villages"),
+          fetch("https://api.satudatabidangpk.com/dashboard/health-facilities"),
+          fetch("https://api.satudatabidangpk.com/dashboard/education-units"),
+          fetch("https://api.satudatabidangpk.com/dashboard/apartments"),
+          fetch("https://api.satudatabidangpk.com/dashboard/malls"),
+          fetch("https://api.satudatabidangpk.com/dashboard/hotels"),
+          fetch("https://api.satudatabidangpk.com/dashboard/offices"),
+          fetch("https://api.satudatabidangpk.com/dashboard/public-housings"),
+          fetch("https://api.satudatabidangpk.com/dashboard/urban-villages"),
         ]);
 
         const data = await Promise.all(responses.map((res) => res.json()));

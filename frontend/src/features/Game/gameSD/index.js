@@ -18,7 +18,7 @@ const GameSD = () => {
 
     const fetchGameData = async () => {
       try {
-        const res = await axios.get("http://localhost:5000/games/2");
+        const res = await axios.get("https://api.satudatabidangpk.com/games/2");
         const rawUrl = res.data.quizizz_url;
 
         // Ambil ID quiz dari link

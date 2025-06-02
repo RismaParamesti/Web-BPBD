@@ -7,7 +7,7 @@ const HealthFacilitiesChart = () => {
   const [chartOptions, setChartOptions] = useState({});
 
   useEffect(() => {
-    axios.get('http://localhost:5000/chart/health_facilities')
+    axios.get('https://api.satudatabidangpk.com/chart/health_facilities')
       .then(res => {
         const { series, drilldownSeries } = res.data;
 

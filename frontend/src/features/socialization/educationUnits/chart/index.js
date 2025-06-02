@@ -27,7 +27,7 @@ const EducationUnitsChart = () => {
   // Buat chartOptions saat darkMode berubah
   useEffect(() => {
     axios
-      .get('http://localhost:5000/chart/education_units')
+      .get('https://api.satudatabidangpk.com/chart/education_units')
       .then((res) => {
         const { series, drilldownSeries } = res.data;
 

@@ -7,7 +7,7 @@ const HousingChart = () => {
   const [chartOptions, setChartOptions] = useState({});
 
   useEffect(() => {
-    axios.get('http://localhost:5000/chart/public_housing')
+    axios.get('https://api.satudatabidangpk.com/chart/public_housing')
       .then(res => {
         const { series, drilldownSeries } = res.data;
 

@@ -17,7 +17,7 @@ const DataAdminSuperAdmin = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    fetch("http://localhost:5000/admin")
+    fetch("https://api.satudatabidangpk.com/admin")
       .then((res) => res.json())
       .then((data) => setData(data))
       .catch((err) => console.error(err));
@@ -51,7 +51,7 @@ const DataAdminSuperAdmin = () => {
       cancelButtonText: "Batal",
     }).then((result) => {
       if (result.isConfirmed) {
-        fetch(`http://localhost:5000/admin/${id}`, {
+        fetch(`https://api.satudatabidangpk.com/admin/${id}`, {
           method: "DELETE",
         })
           .then((res) => res.json())

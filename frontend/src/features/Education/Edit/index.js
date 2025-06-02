@@ -17,7 +17,7 @@ const EducationEdit = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const res = await axios.get(`http://localhost:5000/educations/${id}`);
+        const res = await axios.get(`https://api.satudatabidangpk.com/educations/${id}`);
         setForm({
           name: res.data.data.name,
           materi: res.data.data.materi,
@@ -45,7 +45,7 @@ const EducationEdit = () => {
 
     try {
       await axios.put(
-        `http://localhost:5000/educations/${id}`,
+        `https://api.satudatabidangpk.com/educations/${id}`,
         {
           name: form.name,
           materi: form.materi,
